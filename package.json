@@ -4,13 +4,15 @@
   "description": "Blog API challenge",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "mocha --exit"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "faker": "^4.1.0",
     "mongoose": "^4.13.7",
     "morgan": "^1.9.0",
     "uuid": "^3.1.0"
