@@ -15,6 +15,7 @@ const app = express();
 app.use(morgan("common"));
 app.use(bodyParser.json());
 
+//GET
 app.get("/posts", (req, res) => {
   BlogPost.find()
     .then(posts => {
@@ -35,6 +36,7 @@ app.get("/posts/:id", (req, res) => {
     });
 });
 
+//POST
 app.post("/posts", (req, res) => {
   const requiredFields = ["title", "content", "author"];
   for (let i = 0; i < requiredFields.length; i++) {
@@ -58,6 +60,7 @@ app.post("/posts", (req, res) => {
     });
 });
 
+//PUT
 app.put("/posts/:id", (req, res) => {
   if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {
     const message =
@@ -77,6 +80,13 @@ app.put("/posts/:id", (req, res) => {
   });
 
   BlogPost.findByIdAndUpdate(req.params.id, { $set: toUpdate })
+    .then(post => res.status(204).end())
+    .catch(err => res.status(500).json({ message: "Internal server error" }));
+});
+
+//DELETE
+app.delete("/posts/:id", (req, res) => {
+  BlogPost.findByIdAndRemove(req.params.id)
     .then(post => res.status(204).end())
     .catch(err => res.status(500).json({ message: "Internal server error" }));
 });
