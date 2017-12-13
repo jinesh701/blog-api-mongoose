@@ -2,3 +2,10 @@ language: node_js
 node_js: node
 services:
 - mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: VqlMHQRiFWlnKWhrrA+aE8J84oUpIbuoOVroQz+gzZd/Afk5rMXl0q4l9zLM6ctJ9R66GeDjATAYxkLoSr0qTE1JNx9ZrmT1VsJI0M14YiTN+pMtIJybXxdppFcway9LzXzBc7i77YkhcH7GoBLEQaaHMtkh7V4CqWbJztIXz6uWZq1DINzCTks3BvQZE2++7lPqho9lG/qiH20s2EntpzDGPMJP3ukSbZ2ndOtJzkhfC/4tcqn0f0KxkJgkmFSsJseFgekOLr+oCqVo2JUG+tZKlg/SXHHA707dk0gZzzpbl4qRhSi7d/hMXD3fPbZf8mpkdXDSC5P3l3EXNkOwaUc6xBlXwsghJpHrNN1YJdgjGVhhU+bdk0Vii9Rn/gJWRi+7gfWhU4RL7fVuxFB0ecRutR3sMJXGcD3bq745aBaMm2eKIBFapcIlYh5ZBusXKR4kBo5VN20rRiNWYCQW0OStd5ph35mrNsgnfWOr7H2vnQryN9luNME1exItG98A/DRNDYz2LDytH2Tq7Z3e42zH8Y1MFSjYbiRQMjnuxU8XMCgYDhcnphN4Q5zWWg61r0sc/JGJaJo1DIPKDUoG0y+UCTShT2riNFaU2+kb3V5rQVdNj6RjgRxf9EVZEqcGNSrGjVAdMlOskRgEve+NFVTh9+N3/C4PhOx6XcirO6A=
+  app: afternoon-taiga-52811
+  on:
+    repo: jinesh701/blog-api-mongoose
